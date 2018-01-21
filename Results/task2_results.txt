@@ -1,0 +1,101 @@
+// initialize hog descriptors with window size (128, 112) and 50 trees;
+DT_MaxDepth = 30;
+DT_MinSample = 4;(same as bagging trees)
+
+RF_MaxDepth = 30;
+RF_MinSample = 3;
+
+bin24,cell(16,16), block(16,16),stride(8,8) 
+DTree's accuracy: 0.616667
+BaggingTrees's accuracy: 0.833333
+RandomForest's accuracy: 0.933333
+
+bin24,cell(8,8), block(16,16),stride(8,8) 
+DTree's accuracy: 0.45
+BaggingTrees's accuracy: 0.833333
+RandomForest's accuracy: 0.916667
+
+bin24,cell(8,8), block(16,16),stride(4,4)
+DTree's accuracy: 0.5
+BaggingTrees's accuracy: 0.883333
+RandomForest's accuracy: 0.9
+
+bin9,cell(8,8), block(16,16),stride(4,4)
+DTree's accuracy: 0.5
+BaggingTrees's accuracy: 0.85
+RandomForest's accuracy: 0.9
+
+bin9,cell(8,8), block(16,16),stride(8,8) 
+DTree's accuracy: 0.55
+BaggingTrees's accuracy: 0.883333
+RandomForest's accuracy: 0.9
+
+bin9,cell(16,16), block(16,16),stride(8,8)
+DTree's accuracy: 0.5
+BaggingTrees's accuracy: 0.85
+RandomForest's accuracy: 0.933333
+
+bin9,cell(16,16), block(16,16),stride(4,4)
+DTree's accuracy: 0.533333
+BaggingTrees's accuracy: 0.866667
+RandomForest's accuracy: 0.916667
+
+bin9,cell(16,16), block(16,16),stride(2,2)
+DTree's accuracy: 0.6
+BaggingTrees's accuracy: 0.883333
+RandomForest's accuracy: 0.933333
+
+bin9,cell(16,16), block(16,16),stride(1,1) (98649d)  
+DTree's accuracy: 0.583333
+BaggingTrees's accuracy: 0.9
+RandomForest's accuracy: 0.95
+
+bin6,cell(16,16), block(16,16),stride(8,8)
+DTree's accuracy: 0.55
+BaggingTrees's accuracy: 0.883333
+RandomForest's accuracy: 0.85
+
+
+// initialize hog descriptors with window size (64, 64) and 50 trees;
+DT_MaxDepth = 30;
+DT_MinSample = 4;(same as bagging trees)
+
+RF_MaxDepth = 30;
+RF_MinSample = 3;
+
+bin9,cell(16,16), block(16,16),stride(1,1) (21609d)
+DTree's accuracy: 0.683333
+BaggingTrees's accuracy: 0.866667
+RandomForest's accuracy: 0.95
+
+
+bin9,cell(8,8), block(16,16),stride(8,8) (1764d) [best_task2_RF.xml in foder ../model/]
+DTree's accuracy: 0.516667
+BaggingTrees's accuracy: 0.9
+RandomForest's accuracy: 0.933333
+
+
+bin9,cell(4,4), block(16,16),stride(8,8) (6084d)
+DTree's accuracy: 0.716667
+BaggingTrees's accuracy: 0.9
+RandomForest's accuracy: 0.933333
+
+
+bin9,cell(2,2), block(16,16),stride(8,8) (22500d)
+DTree's accuracy: 0.55
+BaggingTrees's accuracy: 0.9
+RandomForest's accuracy: 0.933333
+
+
+
+
+
+
+
+
+
+
+
+
+
+
