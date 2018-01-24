@@ -134,7 +134,7 @@ int main(int argc, char** argv){
 
 
     // ############################ start testing ##########################
-    for(int i_strategy = 0; i_strategy<3; i_strategy++){
+    for(int i_strategy = 3; i_strategy<4; i_strategy++){
         for(int i_conf_thres = 0; i_conf_thres<9; i_conf_thres++){
             
             // !!!reset to 0
@@ -222,7 +222,7 @@ int main(int argc, char** argv){
                     cout <<"Time use in generating region proposals is " <<1000*  (clock() - time_stt)/(double)CLOCKS_PER_SEC <<"ms" << endl;
             	   cout << "Total Number of Region Proposals: " << rects.size() << endl;
                 }
-                else if(i_strategy > 3){
+                else if(i_strategy == 3){
                  //generate sliding windows
                     time_stt = clock();
                     int scale[3] = {80,100,120};
@@ -283,21 +283,21 @@ int main(int argc, char** argv){
                         }
 
                         // check recall of poetential bbs
-                        // for(int label = 0; label<3; label++){
-                        //     cv::Rect gtRect;
-                        //     gtRect = cv::Rect(gtMat.row(label).at<int>(0),gtMat.row(label).at<int>(1), gtMat.row(label).at<int>(2),gtMat.row(label).at<int>(3));
-                        //     if(compute_Iou(rects[i], gtRect) > 0.6){
-                        //         stringstream ss0; 
-                        //         ss0<<fixed << setprecision(2) <<idx_test;
-                        //         stringstream ss1; 
-                        //         ss1<<fixed << setprecision(2) <<i;
-                        //         stringstream ss2; 
-                        //         ss2<<fixed << setprecision(2) <<i_strategy;
-                        //         stringstream ss3; 
-                        //         ss3<<fixed << setprecision(2) <<label;
-                        //         cv::imwrite(trainingSetPath+"/Iou0_6_strategy"+ss2.str()+"/"+ss0.str()+"_"+ss3.str()+".png", imIn(rects[i]));
-                        //     }
-                        // }
+                        for(int label = 0; label<3; label++){
+                            cv::Rect gtRect;
+                            gtRect = cv::Rect(gtMat.row(label).at<int>(0),gtMat.row(label).at<int>(1), gtMat.row(label).at<int>(2),gtMat.row(label).at<int>(3));
+                            if(compute_Iou(rects[i], gtRect) > 0.6){
+                                stringstream ss0; 
+                                ss0<<fixed << setprecision(2) <<idx_test;
+                                stringstream ss1; 
+                                ss1<<fixed << setprecision(2) <<i;
+                                stringstream ss2; 
+                                ss2<<fixed << setprecision(2) <<i_strategy;
+                                stringstream ss3; 
+                                ss3<<fixed << setprecision(2) <<label;
+                                cv::imwrite(trainingSetPath+"/Iou0_6_strategy"+ss2.str()+"/"+ss0.str()+"_"+ss3.str()+".png", imIn(rects[i]));
+                            }
+                        }
                         
                     }
                 }

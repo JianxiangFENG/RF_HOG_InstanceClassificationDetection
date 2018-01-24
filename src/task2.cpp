@@ -126,9 +126,9 @@ int main(int argc, char **argv){
    // 	RForest->save("../model/best_task2_RF.xml");
 
     cout<<"Load Previous trained RandomForest"<<endl;
-    RForest = RForest->load("../model/task3_RF_64window_allFeat.xml");
-
-
+    std::string model_path = argv[1];
+    RForest = RForest->load(model_path);
+    cout<<"Load Previous trained RandomForest successfully"<<endl;
 
 
 

@@ -158,3 +158,59 @@ recall: 0.7879
 process 43 images cost(ms): 581095.7020
 
 
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.30
+precision: 0.2321
+recall: 0.7879
+process 43 images cost(ms): 591664.5920
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.40
+precision: 0.2923
+recall: 0.7727
+process 43 images cost(ms): 588844.5570
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.50
+precision: 0.4356
+recall: 0.6667
+process 43 images cost(ms): 571187.1500
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.60
+precision: 0.6344
+recall: 0.4470
+process 43 images cost(ms): 580112.8300
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.70
+precision: 0.8889
+recall: 0.1818
+process 43 images cost(ms): 572027.4220
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.80
+precision: 0.8000
+recall: 0.0303
+process 43 images cost(ms): 575707.8430
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.90
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 540150.0730
+
+
