@@ -13,7 +13,6 @@ execute "./bin/task1 ../data/task1/obj1000.jpg 2".
 execute "./bin/task2 ./model/task3_RF_64win_allFeat.xml"
 
 ### Task3
-
 execute "./bin/task3 "
 
 # tdcv_randomForest
