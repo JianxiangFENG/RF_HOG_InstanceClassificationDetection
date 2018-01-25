@@ -216,33 +216,25 @@ process 43 images cost(ms): 541224.6830
 
 Selective strategy: 3
 Iou_threshold: 0.25
-conf_threshold: 0.50
-precision: -nan
-recall: 0.0000
-process 43 images cost(ms): 125.0120
-
-
-Selective strategy: 0
-Iou_threshold: 0.25
-conf_threshold: 0.50
-precision: -nan
-recall: 0.0000
-process 43 images cost(ms): 870.9070
-
-
-Selective strategy: 1
-Iou_threshold: 0.25
-conf_threshold: 0.50
-precision: 1.0000
-recall: 0.0076
-process 43 images cost(ms): 3742.4130
+conf_threshold: 0.10
+precision: 0.1431
+recall: 0.5985
+process 43 images cost(ms): 10632763.5160
 
 
 Selective strategy: 3
 Iou_threshold: 0.25
-conf_threshold: 0.50
-precision: 0.4887
-recall: 0.4924
-process 43 images cost(ms): 2912543.2990
+conf_threshold: 0.20
+precision: 0.1431
+recall: 0.5985
+process 43 images cost(ms): 10589800.5360
+
+
+Selective strategy: 3
+Iou_threshold: 0.25
+conf_threshold: 0.30
+precision: 0.1442
+recall: 0.5985
+process 43 images cost(ms): 10488798.1800
 
 

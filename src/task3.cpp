@@ -227,8 +227,8 @@ int main(int argc, char** argv){
                     time_stt = clock();
                     int scale[3] = {80,100,120};
                     for(unsigned idx_scale = 0; idx_scale<3; ++idx_scale){
-                        for(unsigned x=0; x<(imIn.cols-scale[idx_scale]); x=x+2){
-                            for(unsigned y=0; y<(imIn.rows-scale[idx_scale]); y=y+2){
+                        for(unsigned x=0; x<(imIn.cols-scale[idx_scale]); x=x+1){
+                            for(unsigned y=0; y<(imIn.rows-scale[idx_scale]); y=y+1){
                                 rects.push_back(cv::Rect(x,y,scale[idx_scale],scale[idx_scale]));
                             }
                         }
