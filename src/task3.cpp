@@ -134,8 +134,8 @@ int main(int argc, char** argv){
 
 
     // ############################ start testing ##########################
-    for(int i_strategy = 3; i_strategy<4; i_strategy++){
-        for(int i_conf_thres = 0; i_conf_thres<9; i_conf_thres++){
+    for(int i_strategy = 2; i_strategy<3; i_strategy++){
+        for(int i_conf_thres = 4; i_conf_thres<5; i_conf_thres++){
             
             // !!!reset to 0
             counter = 0;
@@ -146,7 +146,7 @@ int main(int argc, char** argv){
             clock_t time_stt = clock();
             clock_t initial_time = clock();    
 
-            for(unsigned idx_test = 0; idx_test<44; ++idx_test){
+            for(unsigned idx_test = 2; idx_test<3; ++idx_test){
                 cout<<"Processing image "<<idx_test<<endl;
                 cout<<"Strategy "<<i_strategy<<endl;
                 cout<<"Conf_threshold is "<<conf_threshold<<endl;
@@ -283,21 +283,21 @@ int main(int argc, char** argv){
                         }
 
                         // check recall of poetential bbs
-                        for(int label = 0; label<3; label++){
-                            cv::Rect gtRect;
-                            gtRect = cv::Rect(gtMat.row(label).at<int>(0),gtMat.row(label).at<int>(1), gtMat.row(label).at<int>(2),gtMat.row(label).at<int>(3));
-                            if(compute_Iou(rects[i], gtRect) > 0.6){
-                                stringstream ss0; 
-                                ss0<<fixed << setprecision(2) <<idx_test;
-                                stringstream ss1; 
-                                ss1<<fixed << setprecision(2) <<i;
-                                stringstream ss2; 
-                                ss2<<fixed << setprecision(2) <<i_strategy;
-                                stringstream ss3; 
-                                ss3<<fixed << setprecision(2) <<label;
-                                cv::imwrite(trainingSetPath+"/Iou0_6_strategy"+ss2.str()+"/"+ss0.str()+"_"+ss3.str()+".png", imIn(rects[i]));
-                            }
-                        }
+                        // for(int label = 0; label<3; label++){
+                        //     cv::Rect gtRect;
+                        //     gtRect = cv::Rect(gtMat.row(label).at<int>(0),gtMat.row(label).at<int>(1), gtMat.row(label).at<int>(2),gtMat.row(label).at<int>(3));
+                        //     if(compute_Iou(rects[i], gtRect) > 0.6){
+                        //         stringstream ss0; 
+                        //         ss0<<fixed << setprecision(2) <<idx_test;
+                        //         stringstream ss1; 
+                        //         ss1<<fixed << setprecision(2) <<i;
+                        //         stringstream ss2; 
+                        //         ss2<<fixed << setprecision(2) <<i_strategy;
+                        //         stringstream ss3; 
+                        //         ss3<<fixed << setprecision(2) <<label;
+                        //         cv::imwrite(trainingSetPath+"/Iou0_6_strategy"+ss2.str()+"/"+ss0.str()+"_"+ss3.str()+".png", imIn(rects[i]));
+                        //     }
+                        // }
                         
                     }
                 }
@@ -351,6 +351,11 @@ int main(int argc, char** argv){
                 cv::Rect gtRect;
                 cout << "Display results!"<< endl;  
                 for(int i_bb = 0; i_bb<numBoxes; i_bb++){
+                    // float conf = RTtest_results.row(i_bb).at<float>(1);
+                    // int label = RTtest_results.row(i_bb).at<float>(0);
+                    // cv::Rect currRect = rects[RTtest_results.row(i_bb).at<float>(2)];
+                    // gtRect = cv::Rect(gtMat.row(label).at<int>(0),gtMat.row(label).at<int>(1), gtMat.row(label).at<int>(2),gtMat.row(label).at<int>(3));
+
                     if(!is_suppressed[i_bb]){
 
                         counter ++; // accumulate positive prediction
@@ -372,48 +377,43 @@ int main(int argc, char** argv){
                             ss1<<fixed << setprecision(2) <<(rand()%10000+1);
                             cv::imwrite(trainingSetPath+"/false_negative_SlidingWindows/"+ss1.str()+".jpg", imOut(currRect));
                         }
-                        // display_output(imOut, currRect, label, conf);
-                        
+                        display_output(imOut, currRect, label, conf);
                     }
+                    // display_output(imOut, currRect, label, conf);
                 }
 
-                // cout << "Display output!"<< endl;  
-                // imshow("Output", imOut);
-                // cout<<"############### single image ################"<<endl;
-                // cout<<"true_pos is:"<<true_pos<<endl;
-                // cout<<"############### single image ################"<<endl;
-                // cv::imshow("output", imOut);
-                // cv::waitKey();
+                cv::imshow("output", imOut);
+                cv::waitKey();
             } // end of image iteration
             
 
-            cout<<"###############################"<<endl;
-            cout<<"precision is:"<<true_pos/counter<<endl;
-            cout<<"recall is:"<<true_pos/total_gt<<endl;
-            cout<<"###############################"<<endl;
-            string textToSave;
-            ofstream saveFile ("../Results/task3_Iou0.25_64win_origData.txt", std::ios_base::app);
-            stringstream ss1;
-            ss1<<fixed << setprecision(2) <<i_strategy;
-            saveFile <<"Selective strategy: "<<ss1.str()<<"\n";
-            ss1.str(string());
-            ss1<<fixed << setprecision(2) <<Iou_threshold;
-            saveFile <<"Iou_threshold: "<<ss1.str()<<"\n";
-            ss1.str(string());
-            ss1<<fixed << setprecision(2) <<conf_threshold;
-            saveFile <<"conf_threshold: "<<ss1.str()<<"\n";
-            ss1.str(string());
-            ss1<<fixed << setprecision(4) <<(true_pos/counter);
-            saveFile <<"precision: "<<ss1.str()<<"\n";
-            ss1.str(string());
-            ss1<<fixed << setprecision(4) <<(true_pos/total_gt);
-            saveFile <<"recall: "<<ss1.str()<<"\n";
-            ss1.str(string());
-            ss1<<fixed << setprecision(4) <<(1000*  (clock() - initial_time)/(double)CLOCKS_PER_SEC);
-            saveFile <<"process 43 images cost(ms): "<<ss1.str()<<"\n";
-            ss1.str(string());
-            saveFile <<"\n\n";
-            saveFile.close();
+            // cout<<"###############################"<<endl;
+            // cout<<"precision is:"<<true_pos/counter<<endl;
+            // cout<<"recall is:"<<true_pos/total_gt<<endl;
+            // cout<<"###############################"<<endl;
+            // string textToSave;
+            // ofstream saveFile ("../Results/task3_Iou0.25_64win_origData.txt", std::ios_base::app);
+            // stringstream ss1;
+            // ss1<<fixed << setprecision(2) <<i_strategy;
+            // saveFile <<"Selective strategy: "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // ss1<<fixed << setprecision(2) <<Iou_threshold;
+            // saveFile <<"Iou_threshold: "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // ss1<<fixed << setprecision(2) <<conf_threshold;
+            // saveFile <<"conf_threshold: "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // ss1<<fixed << setprecision(4) <<(true_pos/counter);
+            // saveFile <<"precision: "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // ss1<<fixed << setprecision(4) <<(true_pos/total_gt);
+            // saveFile <<"recall: "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // ss1<<fixed << setprecision(4) <<(1000*  (clock() - initial_time)/(double)CLOCKS_PER_SEC);
+            // saveFile <<"process 43 images cost(ms): "<<ss1.str()<<"\n";
+            // ss1.str(string());
+            // saveFile <<"\n\n";
+            // saveFile.close();
             
 
             
