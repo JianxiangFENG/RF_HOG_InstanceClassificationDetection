@@ -1,0 +1,202 @@
+(3000+ objects imgs, 6000+ backgroud imgs)
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.10
+precision: 0.6233
+recall: 0.6894
+process 43 images cost(ms): 34689.6970
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.20
+precision: 0.6233
+recall: 0.6894
+process 43 images cost(ms): 34799.4530
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.30
+precision: 0.6454
+recall: 0.6894
+process 43 images cost(ms): 34792.4850
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.40
+precision: 0.6757
+recall: 0.5682
+process 43 images cost(ms): 34905.2220
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.50
+precision: 0.7447
+recall: 0.2652
+process 43 images cost(ms): 34624.4490
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.60
+precision: 0.6667
+recall: 0.0303
+process 43 images cost(ms): 34807.0740
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.70
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 34767.2880
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.80
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 34849.9810
+
+
+Selective strategy: 0
+Iou_threshold: 0.25
+conf_threshold: 0.90
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 35006.7620
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.10
+precision: 0.4810
+recall: 0.7652
+process 43 images cost(ms): 157568.3920
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.20
+precision: 0.4739
+recall: 0.7576
+process 43 images cost(ms): 157331.7990
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.30
+precision: 0.4927
+recall: 0.7652
+process 43 images cost(ms): 157232.5410
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.40
+precision: 0.5973
+recall: 0.6742
+process 43 images cost(ms): 157429.3400
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.50
+precision: 0.7400
+recall: 0.5606
+process 43 images cost(ms): 159452.9260
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.60
+precision: 0.8800
+recall: 0.1667
+process 43 images cost(ms): 163029.1770
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.70
+precision: 1.0000
+recall: 0.0303
+process 43 images cost(ms): 160297.3030
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.80
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 165876.8960
+
+
+Selective strategy: 1
+Iou_threshold: 0.25
+conf_threshold: 0.90
+precision: -nan
+recall: 0.0000
+process 43 images cost(ms): 187794.3800
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.10
+precision: 0.4280
+recall: 0.8333
+process 43 images cost(ms): 616868.8170
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.20
+precision: 0.4336
+recall: 0.8409
+process 43 images cost(ms): 595591.5300
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.30
+precision: 0.4400
+recall: 0.8333
+process 43 images cost(ms): 600093.0800
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.40
+precision: 0.6190
+recall: 0.7879
+process 43 images cost(ms): 600468.9800
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.50
+precision: 0.7478
+recall: 0.6515
+process 43 images cost(ms): 598830.0820
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.60
+precision: 0.8718
+recall: 0.2576
+process 43 images cost(ms): 518545.3620
+
+
+Selective strategy: 2
+Iou_threshold: 0.25
+conf_threshold: 0.70
+precision: 1.0000
+recall: 0.0606
+process 43 images cost(ms): 475260.4070
+
+
+
