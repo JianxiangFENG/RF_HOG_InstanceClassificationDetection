@@ -1,6 +1,6 @@
 # Description
 
-**Author** [JianxiangFeng]
+**Author** JianxiangFeng<br />
 Second homework of course Tracking and detectiong in computer vision of Faculty Informatics TUM.
 
 ## Reproducing results
